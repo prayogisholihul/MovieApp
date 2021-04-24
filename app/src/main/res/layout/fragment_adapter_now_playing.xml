@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rvLayout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:context=".AdapterNowplayingList">
+
+    <ImageView
+        android:id="@+id/pictFilm"
+        android:layout_width="220dp"
+        android:layout_height="200dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/user_pic"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/pictFilm"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pictFilm">
+
+        <TextView
+            android:id="@+id/judulFilm"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="4dp"
+            android:text="Film"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@+id/genreFilm"
+            app:layout_constraintEnd_toStartOf="@+id/ratingFilm"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/genreFilm"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:textSize="14sp"
+            android:text="Genre"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/ratingFilm"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/judulFilm" />
+
+        <TextView
+            android:id="@+id/ratingFilm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_star_24px"
+            android:text="0.0"
+            app:layout_constraintBottom_toBottomOf="@+id/genreFilm"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/judulFilm" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
