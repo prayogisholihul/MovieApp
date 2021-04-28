@@ -20,6 +20,7 @@ class tiketing : Fragment() {
     lateinit var listenerticketing: ValueEventListener
     private var arrayTicketlist = ArrayList<Checkoutmodel>()
     lateinit var v : View
+    var dataCheckout = Checkoutmodel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -46,7 +47,7 @@ class tiketing : Fragment() {
             override fun onDataChange(snapshot: DataSnapshot) {
                 arrayTicketlist.clear()
                 for (getarrayTicket in snapshot.children) {
-                    val dataCheckout =
+                    dataCheckout=
                         getarrayTicket.getValue(Checkoutmodel::class.java) as Checkoutmodel
                     arrayTicketlist.add(dataCheckout)
                 }
@@ -61,11 +62,13 @@ class tiketing : Fragment() {
                         .show()
                 } else {
                     val sizemovie = arrayTicketlist.size.toString()
-                    totMovie.text = "${sizemovie} ticket"
+                    totMovie.text = "$sizemovie ticket"
                     rvTicketList.layoutManager = LinearLayoutManager(requireContext())
                     rvTicketList.adapter = AdapterTicketlist(requireContext(), arrayTicketlist) {
                         v.visibility = View.GONE
-                       Navigation.findNavController(requireView()).navigate(R.id.action_tiketing_to_ticketDetail)
+                        val bundle = Bundle()
+                        bundle.putParcelable("DataTicket", it)
+                       Navigation.findNavController(requireView()).navigate(R.id.action_tiketing_to_ticketDetail,bundle)
                     }
                 }
             }

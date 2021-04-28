@@ -132,6 +132,8 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvTicket"
+        tools:listitem="@layout/fragment_adapter_rvticket"
+        tools:itemCount="5"
         android:layout_width="0dp"
         android:layout_height="177dp"
         android:layout_marginStart="16dp"
