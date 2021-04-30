@@ -33,9 +33,9 @@ class MainMenu : AppCompatActivity() {
             if (navController.currentDestination?.id != R.id.tiketing) {
                 navController.navigate(R.id.tiketing)
             }
-            changeIcon(main_menu, R.drawable.ic_home)
-            changeIcon(menu_tiketing, R.drawable.ic_tiket_active)
-            changeIcon(menu_profile, R.drawable.ic_profile)
+//            changeIcon(main_menu, R.drawable.ic_home)
+//            changeIcon(menu_tiketing, R.drawable.ic_tiket_active)
+//            changeIcon(menu_profile, R.drawable.ic_profile)
         }
 
         menu_profile.setOnClickListener {

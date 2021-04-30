@@ -12,6 +12,10 @@
         <action
             android:id="@+id/action_tiketing_to_ticketDetail"
             app:destination="@id/ticketDetail" />
+        <argument
+            android:name="NotifPass"
+            app:argType="boolean"
+            android:defaultValue="true" />
     </fragment>
     <fragment
         android:id="@+id/ticketDetail"

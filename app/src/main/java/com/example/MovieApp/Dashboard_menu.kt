@@ -92,12 +92,6 @@ class Dashboard_menu : Fragment() {
 
         val layoutManager: RecyclerView.LayoutManager = LinearLayoutManager(requireContext())
         rvComingSoon.layoutManager = layoutManager
-
-        rvComingSoon.adapter = AdapterComingSoon(requireContext(), arrayFilmComingsoon){
-            val i = Intent(requireContext(), Detail_movie::class.java)
-            i.putExtra("PassData", it)
-            activity?.startActivity(i)
-        }
     }
 
 
@@ -112,7 +106,11 @@ class Dashboard_menu : Fragment() {
                   arrayFilmComingsoon.add(dataFillm)
                   arrayFilmNowplaying.add(dataFillm)
               }
-
+              rvComingSoon.adapter = AdapterComingSoon(requireContext(), arrayFilmComingsoon){
+                  val i = Intent(requireContext(), Detail_movie::class.java)
+                  i.putExtra("PassData", it)
+                  activity?.startActivity(i)
+              }
           }
           override fun onCancelled(error: DatabaseError) {
               TODO("Not yet implemented")

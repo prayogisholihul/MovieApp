@@ -191,4 +191,9 @@ class profile : Fragment() {
         PassProf.isEnabled =true
         TILPassProf.isPasswordVisibilityToggleEnabled = true
     }
+
+    override fun onPause() {
+        super.onPause()
+        ref.removeEventListener(listener)
+    }
 }

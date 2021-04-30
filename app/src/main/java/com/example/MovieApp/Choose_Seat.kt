@@ -35,23 +35,24 @@ class Choose_Seat : AppCompatActivity() {
         getDataBangku()
 
         for (itemSeat in arrayButton) {
+            val data = Checkoutmodel(
+                itemSeat.resources.getResourceEntryName(itemSeat.id).toUpperCase(
+                    Locale.ROOT
+                ), getdataMovie.NamaFilm, getdataMovie.picture, harga
+            )
             var booleanSeat = false
             itemSeat.setOnClickListener {
                 if (booleanSeat) {
                     itemSeat.setImageResource(R.drawable.ic_rectangle_20)
-                    total -= 1
                     booleanSeat = false
+                    total -= 1
                     buyTicket(total)
+                    ticketArray.remove(data)
                 } else {
                     itemSeat.setImageResource(R.drawable.ic_rectangle_21)
-                    total += 1
                     booleanSeat = true
+                    total += 1
                     buyTicket(total)
-                    val data = Checkoutmodel(
-                        itemSeat.resources.getResourceEntryName(itemSeat.id).toUpperCase(
-                            Locale.ROOT
-                        ), getdataMovie.NamaFilm, getdataMovie.picture, harga
-                    )
                     ticketArray.add(data)
                 }
             }
@@ -71,7 +72,7 @@ class Choose_Seat : AppCompatActivity() {
             beliTiket.visibility = View.INVISIBLE
         } else {
             beliTiket.visibility = View.VISIBLE
-            beliTiket.text = "Beli Tiket $total"
+            beliTiket.text = "Beli Tiket $i"
         }
     }
 
