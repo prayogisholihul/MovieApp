@@ -58,5 +58,9 @@ class Detail_movie : AppCompatActivity() {
             i.putExtra("PasstoCheckout", passData)
             startActivity(i)
         }
+        streaming.setOnClickListener {
+            val i = Intent(this@Detail_movie, Streaming::class.java)
+            startActivity(i)
+        }
     }
 }

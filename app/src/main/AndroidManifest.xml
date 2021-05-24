@@ -22,7 +22,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Test">
-        <activity android:name=".PopupSplash"
+        <activity android:name=".Streaming"></activity>
+        <activity
+            android:name=".PopupSplash"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,7 +32,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity2"/>
+        <activity android:name=".MainActivity2" />
         <activity android:name=".Success_buy" />
         <activity android:name=".Checkout" />
         <activity android:name=".Choose_Seat" />
@@ -38,17 +40,16 @@
         <activity android:name=".PhotoProf" />
         <activity android:name=".SignUp" />
         <activity android:name=".MainMenu">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.DEFAULT" />
-        </intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
         <activity android:name=".SignIn" />
         <activity android:name=".lastSplash" />
         <activity android:name=".splash2" />
         <activity android:name=".splash1" />
-
     </application>
 
 </manifest>
