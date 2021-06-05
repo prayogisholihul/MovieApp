@@ -46,6 +46,11 @@ class SignIn : AppCompatActivity() {
                     textInputLayout3.error = "Password min 6 karakter"
                     textInputLayout3.requestFocus()
                 }
+
+                username.text.toString() == "admin" && pass.text.toString() == "123456" -> {
+                    startActivity(Intent(this,Admin::class.java))
+                    finish()
+                }
                 else -> {
                     signIn(username.text.toString(), pass.text.toString())
                 }

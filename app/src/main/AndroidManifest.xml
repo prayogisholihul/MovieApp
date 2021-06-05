@@ -22,7 +22,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Test">
-        <activity android:name=".Streaming"></activity>
+        <activity
+            android:name=".Admin"
+            android:label="@string/title_activity_admin" />
+        <activity android:name=".Streaming" />
         <activity
             android:name=".PopupSplash"
             android:theme="@style/SplashTheme">
@@ -32,7 +35,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity2" />
         <activity android:name=".Success_buy" />
         <activity android:name=".Checkout" />
         <activity android:name=".Choose_Seat" />
