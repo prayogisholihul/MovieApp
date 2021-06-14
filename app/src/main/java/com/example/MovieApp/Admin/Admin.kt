@@ -1,9 +1,10 @@
-package com.example.MovieApp
+package com.example.MovieApp.Admin
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.MovieApp.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class Admin : AppCompatActivity() {
@@ -23,5 +24,7 @@ class Admin : AppCompatActivity() {
 //        )
 //        setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+
     }
 }

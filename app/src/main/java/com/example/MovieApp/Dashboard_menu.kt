@@ -9,15 +9,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.fragment_dashboard_menu.*
-import kotlinx.android.synthetic.main.fragment_dashboard_menu.view.*
-import java.util.*
-import kotlin.collections.ArrayList
 
 class Dashboard_menu : Fragment() {
 
@@ -40,7 +38,14 @@ class Dashboard_menu : Fragment() {
         pref = sharedPref(requireContext())
         ref = FirebaseDatabase.getInstance().getReference("Film")
 
+        Glide.with(this@Dashboard_menu).load(R.drawable.popcorn)
+            .apply(RequestOptions.circleCropTransform()).into(fotoProp)
+
         getDataFilm()
+
+        fotoProp.setOnClickListener {
+          Navigation.findNavController(requireView()).navigate(R.id.action_dashboard_menu_to_buyFoodAndBeverage)
+        }
 
         val refData: DatabaseReference = FirebaseDatabase.getInstance().getReference("User")
         val progressDialog = ProgressDialog(requireContext())
@@ -59,18 +64,6 @@ class Dashboard_menu : Fragment() {
                         tvNamaUser.text = database.Nama
                     }
 
-                    if (pref.getValue("url").isNullOrEmpty()) {
-                        if (database != null) {
-                            Glide.with(this@Dashboard_menu).load(database.url)
-                                .error(R.drawable.user_pic)
-                                .apply(RequestOptions.circleCropTransform()).into(fotoProp)
-
-                        }
-                    } else {
-                        Glide.with(this@Dashboard_menu).load(pref.getValue("url"))
-                            .error(R.drawable.user_pic)
-                            .apply(RequestOptions.circleCropTransform()).into(fotoProp)
-                    }
                     progressDialog.dismiss()
                 }
 

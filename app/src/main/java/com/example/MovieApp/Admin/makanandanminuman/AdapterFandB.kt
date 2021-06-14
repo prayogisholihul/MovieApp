@@ -1,10 +1,13 @@
-package com.example.MovieApp
+package com.example.MovieApp.Admin.makanandanminuman
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.example.MovieApp.FandBData
+import com.example.MovieApp.R
 import kotlinx.android.synthetic.main.fragment_adapter_f_and_b.view.*
 
 class AdapterFandB(private val dataFandB: ArrayList<FandBData>) :
@@ -22,9 +25,10 @@ class AdapterFandB(private val dataFandB: ArrayList<FandBData>) :
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
-//        Glide.with(holder.itemView.context)
-//            .load(dataFandB[position].picture)
-//            .into(holder.pictureFandB)
+        Glide.with(holder.itemView.context)
+            .load(dataFandB[position].picture)
+            .error(R.drawable.illustration2)
+            .into(holder.pictureFandB)
 
         holder.namaFandB.text = dataFandB[position].nama
         holder.hargaFandB.text = " Rp. ${dataFandB[position].harga.toString()}"
@@ -55,7 +59,7 @@ class AdapterFandB(private val dataFandB: ArrayList<FandBData>) :
     }
 
     interface OnItemClickCallback {
-        fun onItemClicked(data:FandBData,imgStatus :ImageView)
+        fun onItemClicked(data: FandBData, imgStatus :ImageView)
     }
 
     fun setOnItemLongClickCallback(onItemLongClickCallback: OnItemLongClickCallback) {
@@ -63,7 +67,7 @@ class AdapterFandB(private val dataFandB: ArrayList<FandBData>) :
     }
 
     interface OnItemLongClickCallback{
-        fun longClicked(data:FandBData)
+        fun longClicked(data: FandBData)
     }
 
 }

@@ -88,7 +88,7 @@ class SignUp : AppCompatActivity() {
                 if (!(snapshot.exists())) {
                     progressDialog.dismiss()
                     ref.child(username).setValue(data)
-                    val i = Intent(this@SignUp, PhotoProf::class.java)
+                    val i = Intent(this@SignUp, SignIn::class.java)
                     i.putExtra("nama",data.Nama)
                     i.putExtra("username", data.Username)
 

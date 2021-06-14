@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout9"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/purpleApp"
+    tools:context=".Admin.movieList.AddMovie"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imgFilmAdmin"
+            android:layout_width="170dp"
+            android:layout_height="170dp"
+            android:layout_marginTop="36dp"
+            android:src="@drawable/ic_local_movies_24px"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/choosePictAdmin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/btn_upload"
+            app:layout_constraintBottom_toBottomOf="@+id/imgFilmAdmin"
+            app:layout_constraintEnd_toEndOf="@+id/imgFilmAdmin" />
+
+        <EditText
+            android:id="@+id/namaFilmAdmin"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="56dp"
+            android:layout_marginEnd="24dp"
+            android:ems="10"
+            android:hint="NAMA FILM"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toTopOf="@+id/genreFilmAdmin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgFilmAdmin" />
+
+        <EditText
+            android:id="@+id/genreFilmAdmin"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:ems="10"
+            android:hint="GENRE FILM"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toTopOf="@+id/bioskopFilmAdmin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/namaFilmAdmin" />
+
+        <EditText
+            android:id="@+id/bioskopFilmAdmin"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:ems="10"
+            android:hint="BIOSKOP FILM"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toTopOf="@+id/dateFilm"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/genreFilmAdmin" />
+
+        <EditText
+            android:id="@+id/dateFilm"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:ems="10"
+            android:hint="DATE FILM"
+            android:inputType="textPersonName"
+            android:focusable="false"
+            android:editable="false"
+            app:layout_constraintBottom_toTopOf="@+id/ratingFilmAdmin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bioskopFilmAdmin"
+       />
+
+        <EditText
+            android:id="@+id/ratingFilmAdmin"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:drawableLeft="@drawable/ic_star_24px"
+            android:ems="10"
+            android:hint="RATING FILM"
+            android:includeFontPadding="true"
+            android:inputType="number"
+            android:paddingStart="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/sinopsisFilmAdmin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dateFilm" />
+
+        <EditText
+            android:id="@+id/sinopsisFilmAdmin"
+            android:layout_width="0dp"
+            android:layout_height="250dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="SINOPSIS FILM"
+            android:inputType="textMultiLine"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ratingFilmAdmin" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonOK"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/button1"
+            android:text="OK"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sinopsisFilmAdmin" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

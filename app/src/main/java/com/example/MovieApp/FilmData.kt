@@ -8,6 +8,8 @@ data class FilmData(
     var picture: String = "",
     var NamaFilm: String = "",
     var Genre: String = "",
-    var Sinopsis:String = "",
-    var Rating: Int = 0
+    var Sinopsis: String = "",
+    var Rating: Int = 0,
+    var Bioskop: String = "",
+    var Date: String = ""
 ) : Parcelable

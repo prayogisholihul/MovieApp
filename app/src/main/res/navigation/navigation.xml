@@ -25,11 +25,44 @@
     <fragment
         android:id="@+id/dashboard_menu"
         android:name="com.example.MovieApp.Dashboard_menu"
-        android:label="Dashboard_menu" />
+        android:label="Dashboard_menu" >
+        <action
+            android:id="@+id/action_dashboard_menu_to_buyFoodAndBeverage"
+            app:destination="@id/buyFoodAndBeverage" />
+    </fragment>
     <fragment
         android:id="@+id/profile"
         android:name="com.example.MovieApp.profile"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/buyFoodAndBeverage"
+        android:name="com.example.MovieApp.BuyFoodAndBeverage"
+        android:label="fragment_buy_food_and_beverage"
+        tools:layout="@layout/fragment_buy_food_and_beverage" >
+        <action
+            android:id="@+id/action_buyFoodAndBeverage_to_dashboard_menu"
+            app:destination="@id/dashboard_menu" />
+        <action
+            android:id="@+id/action_buyFoodAndBeverage_to_success_buy"
+            app:destination="@id/success_buy" />
+        <action
+            android:id="@+id/action_buyFoodAndBeverage_to_paketFandB"
+            app:destination="@id/paketFandB" />
+    </fragment>
+    <activity
+        android:id="@+id/success_buy"
+        android:name="com.example.MovieApp.Success_buy"
+        android:label="activity_success_buy"
+        tools:layout="@layout/activity_success_buy" />
+    <fragment
+        android:id="@+id/paketFandB"
+        android:name="com.example.MovieApp.PaketFandB"
+        android:label="fragment_paket_fand_b"
+        tools:layout="@layout/fragment_paket_fand_b" >
+        <action
+            android:id="@+id/action_paketFandB_to_success_buy"
+            app:destination="@id/success_buy" />
+    </fragment>
 
 </navigation>

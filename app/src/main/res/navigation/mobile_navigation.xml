@@ -7,19 +7,27 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.example.MovieApp.ui.home.HomeFragment"
+        android:name="com.example.MovieApp.Admin.movieList.MovieList"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_movie_list" />
+        tools:layout="@layout/fragment_movie_list" >
+        <action
+            android:id="@+id/action_navigation_home_to_addMovie"
+            app:destination="@id/addMovie" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.example.MovieApp.ui.dashboard.makanandanminuman"
+        android:name="com.example.MovieApp.Admin.makanandanminuman.makanandanminuman"
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_f_b" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.example.MovieApp.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/addMovie"
+        android:name="com.example.MovieApp.Admin.movieList.AddMovie"
+        android:label="fragment_add_movie"
+        tools:layout="@layout/fragment_add_movie" >
+        <argument
+            android:name="DataFilmAdmin"
+            app:argType="com.example.MovieApp.FilmData" />
+    </fragment>
 </navigation>

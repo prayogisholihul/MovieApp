@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.MovieApp.Admin.Admin
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_sign_in.*
 
@@ -48,7 +49,7 @@ class SignIn : AppCompatActivity() {
                 }
 
                 username.text.toString() == "admin" && pass.text.toString() == "123456" -> {
-                    startActivity(Intent(this,Admin::class.java))
+                    startActivity(Intent(this, Admin::class.java))
                     finish()
                 }
                 else -> {

@@ -1,4 +1,4 @@
-package com.example.MovieApp.ui.dashboard
+package com.example.MovieApp.Admin.makanandanminuman
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.MovieApp.AdapterFandB
 import com.example.MovieApp.FandBData
 import com.example.MovieApp.R
 import com.google.firebase.database.*
@@ -15,7 +14,7 @@ import kotlinx.android.synthetic.main.fragment_f_b.view.*
 
 class makanandanminuman : Fragment() {
 
-    val arrayFandB = ArrayList<FandBData>()
+    private val arrayFandB = ArrayList<FandBData>()
     lateinit var ref : DatabaseReference
     lateinit var listener: ValueEventListener
     lateinit var root:View

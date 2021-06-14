@@ -23,8 +23,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Test">
         <activity
-            android:name=".Admin"
-            android:label="@string/title_activity_admin" />
+            android:name=".Admin.Admin"
+            android:label="@string/title_activity_admin"
+            android:windowSoftInputMode="adjustPan"/>
         <activity android:name=".Streaming" />
         <activity
             android:name=".PopupSplash"

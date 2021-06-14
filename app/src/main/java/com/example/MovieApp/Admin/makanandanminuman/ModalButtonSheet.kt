@@ -1,4 +1,4 @@
-package com.example.MovieApp.ui.dashboard
+package com.example.MovieApp.Admin.makanandanminuman
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -23,9 +23,14 @@ class ModalButtonSheet : BottomSheetDialogFragment() {
         view.setBottomText.text = "Rubah Harga ${data.nama}"
 
         view.buttonSendHarga.setOnClickListener{
-            FirebaseDatabase.getInstance().getReference("FoodAndBeverage").child(data.nama).child("harga").setValue(
-                view.setHarga.text.toString().toInt()
-            )
+            if(view.setHarga.text.isEmpty()){
+                dismiss()
+            }else{
+                FirebaseDatabase.getInstance().getReference("FoodAndBeverage").child(data.nama).child("harga").setValue(
+                    view.setHarga.text.toString().toInt()
+                )
+            }
+
         }
         return view
     }
